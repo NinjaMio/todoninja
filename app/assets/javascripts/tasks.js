@@ -15,7 +15,6 @@ $(function() {
 
     return liElement;
   }
-
   // toggleTask takes in an HTML representation of the
   // an event that fires from an HTML representation of
   // the toggle checkbox and  performs an API request to toggle
@@ -38,7 +37,7 @@ $(function() {
 
     } );
   }
-
+  
   $.get("/tasks").success( function( data ) {
     var htmlString = "";
 
@@ -66,6 +65,7 @@ $(function() {
       var ulTodos = $('.todo-list');
       ulTodos.append(htmlString);
       $('.toggle').click(toggleTask);
+      $('.new-todo').val('');
     });
   });
 
